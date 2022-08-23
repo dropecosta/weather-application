@@ -1,5 +1,9 @@
 <h1 align="center">🌤 Weather APP</a></h1>
-Application to select cities and display temperature data for the current day and forecast for the week.  
+Application to select cities and display temperature data for the current day and forecast for the week. 
+<br /><br /> 
+
+![application screen](https://raw.githubusercontent.com/dropecosta/weather-application/master/src/assets/screen.png)
+
 
 ### Features
 
@@ -25,7 +29,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 [![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript-1f425f.svg)](https://www.javascript.com)
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
 
-![application screen](https://raw.githubusercontent.com/dropecosta/weather-application/master/src/assets/screen.png)
 
 
 
