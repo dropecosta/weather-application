@@ -1,12 +1,10 @@
 <h1 align="center">🌤 Weather APP</a></h1>
 Application to select cities and display temperature data for the current day and forecast for the week.
-
-![Pedro Reis](https://img.shields.io/badge/maintainer-theMaintainer-blue)
+&nbsp;
 [![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript-1f425f.svg)](https://www.javascript.com)
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
-[![GitHub release](https://img.shields.io/github/release/Naereen/StrapDown.js.svg)](https://GitHub.com/Naereen/StrapDown.js/releases/)
 
-![alt text](assets/screen.png)
+![application screen](https://raw.githubusercontent.com/dropecosta/weather-application/master/src/assets/screen.png)
 
 ### Features
 
