@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 import {
   Accordion,
   AccordionItem,
   AccordionItemHeading,
   AccordionItemButton,
   AccordionItemPanel,
-} from "react-accessible-accordion";
-import "./Forecast.css";
+} from 'react-accessible-accordion';
+import './Forecast.scss';
 
 const WEEK_DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
@@ -16,7 +16,9 @@ const Forecast = ({ data }) => {
   
   return (
     <>
-      <label className="title">Daily</label>
+    <div className="title-container">
+      <label className="title">Daily forecast</label>
+    </div>
       <Accordion allowZeroExpanded>
         {data.list.splice(0, 7).map((item, idx) => (
           <AccordionItem key={idx}>
@@ -65,4 +67,4 @@ const Forecast = ({ data }) => {
   );
 };
 
-export default Forecast;
+export default Forecast

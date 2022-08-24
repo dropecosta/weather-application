@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useState } from 'react';
 import './ToogleSwitch.scss';
 
 const ToogleSwitch = (props) => {
-  const [toggled, setToggled] = React.useState(true);
+  const [toggled, setToggled] = useState(true);
   return (
     <label
       className="toggle"
@@ -15,7 +15,7 @@ const ToogleSwitch = (props) => {
       {!toggled && <span className="off">F</span>}
       <div
         style={{
-          transform: toggled ? " translateX(28px)" : " translateX(0px)",
+          transform: toggled ? "translateX(28px)" : "translateX(0px)",
         }}
       ></div>
     </label>

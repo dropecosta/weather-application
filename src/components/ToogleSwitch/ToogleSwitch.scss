@@ -10,22 +10,26 @@
   bottom: 0;
   transition: 0.4s;
   border-radius: 55px;
-  background-color: #888;
-  .on,
-  .off {
-    color: #FFF;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    font-size: 1rem;
-    font-weight: 500;
-    display: flex;
-    svg {
-      width: 20px;
-      fill: white;
+  background-color: #333;
+  box-shadow: 5px 3px 10px 2px rgb(0 0 0 / 30%);
+
+    .on, .off {
+      color: #FFF;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      font-size: 1rem;
+      font-weight: 500;
+      display: flex;
+
+      svg {
+        width: 20px;
+        fill: white;
+      }
+
     }
-  }
+
   .on {
     padding-right: 15px;
   }

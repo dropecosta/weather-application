@@ -1,0 +1,52 @@
+.header {
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    
+    h2 {
+      font-size: 18px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+}
+
+.label-description {
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 2px 5px 0 0;
+    
+}
+
+.toggle-group {
+  width: 180px;
+  height: 30px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.toggle {
+    width: 50px;
+    display: flex;
+    padding: 1px 0 2px 2px;
+    background-color: #1a202c;
+    display: block;
+    border-radius: 1000px;
+    cursor: pointer;
+    box-shadow: 0px 5px 20px -10px #000000;
+    transition: background-color 0.2s ease-in;
+    border: 1px solid #333;
+    
+    .toggle-inner {
+      width: 15px;
+      height: 15px;
+      background-color: white;
+      border-radius: 1000px;
+      transition: margin-left 0.2s ease-in, background-color 0.2s ease-in;
+  
+      &.toggle-active {
+        margin-left: 30px;
+      }
+    }
+  }

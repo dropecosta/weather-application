@@ -1,0 +1,72 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  color: #1a202c;
+  background: #ccc;
+  transition: color 0.2s ease-in;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Arial" !important;
+  padding-bottom: 20px;
+}
+
+#app {
+  height: 100vh;
+  width: 100%;
+}
+
+main {
+  background-color: #f7fafc;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  transition: background-color 0.2s ease-in;
+}
+
+// Dark Mode
+.dark-mode {
+  color: white;
+  background-color: #1c1c1c;
+  transition: background-color 0.3s ease-in-out;
+
+  .weather {
+    color: #fff;
+    background-color: #333;
+  }
+
+  .toggle {
+    background-color: #ccc;
+
+    .toggle-inner {
+      background-color: #333;
+    }
+
+    .on,
+    .off {
+      color: #333;
+    }
+  }
+  .daily-item {
+    background: #333;
+
+    .day,
+    .min-max {
+      color: #fff;
+    }
+
+    .description {
+      color: #888;
+    }
+  }
+
+  .daily-details-grid-item label:first-child {
+    color: #888;
+  }
+
+  .daily-details-grid-item label:last-child {
+    color: #fff;
+  }
+}
