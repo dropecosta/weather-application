@@ -1,4 +1,6 @@
 import React from 'react';
+import sun from '../../assets/icons/sun.svg';
+import moon from '../../assets/icons/moon.svg';
 import './Header.scss';
 
 const Header = () => {
@@ -20,11 +22,14 @@ const Header = () => {
   return (
     <div className="header">
       <h2>Weather APP</h2>
+      
       <div className="toggle-group">
+      <img src={moon} className='darkmode-icon-moon' alt="moon"/>
         <div className="toggle" onClick={() => darkMode === false ? setDarkMode(true) : setDarkMode(false)}>
           <div className="toggle-inner" />
         </div>
-        <span className="label-description">dark mode</span>
+        
+        <img src={sun} className='darkmode-icon-sun' alt="sun"/>
       </div>
     </div>
   );

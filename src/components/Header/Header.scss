@@ -10,6 +10,20 @@
       text-transform: uppercase;
       margin-top: 3px;
     }
+
+    .toggle-group {
+      .darkmode-icon-sun {
+        width: 20px;
+        height: 20px;
+        margin: 0 6px;
+      }
+      .darkmode-icon-moon {
+        width: 18px;
+        height: 18px;
+        margin: 0 7px;
+      }
+    }
+
 }
 
 .label-description {
