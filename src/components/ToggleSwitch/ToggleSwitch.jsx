@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './ToogleSwitch.scss';
+import './ToggleSwitch.scss';
 
-const ToogleSwitch = (props) => {
+const ToggleSwitch = (props) => {
   const [toggled, setToggled] = useState(true);
   return (
     <label
@@ -22,4 +22,4 @@ const ToogleSwitch = (props) => {
   );
 };
 
-export default ToogleSwitch;
+export default ToggleSwitch;

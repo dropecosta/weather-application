@@ -3,7 +3,8 @@ Application to select cities and display temperature data for the current day an
 <br /><br /> 
 
 ![application screen](https://raw.githubusercontent.com/dropecosta/weather-application/master/src/assets/screen.png)
-
+<br />
+![application darkmode screen](https://raw.githubusercontent.com/dropecosta/weather-application/master/src/assets/screen2.png)
 
 ### Features
 
@@ -20,6 +21,12 @@ Application to select cities and display temperature data for the current day an
 In the project directory, you can run:
 
 ### `npm start`
+
+Runs the test watcher in an interactive mode:
+
+### `npm test`
+
+![unit tests](https://raw.githubusercontent.com/dropecosta/weather-application/master/src/assets/tests.png)
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component tests should match the snapshot 1`] = `
+<div
+  className="header"
+>
+  <h2>
+    Weather APP
+  </h2>
+  <div
+    className="toggle-group"
+  >
+    <img
+      alt="moon"
+      className="darkmode-icon-moon"
+      src="moon.svg"
+    />
+    <div
+      className="toggle"
+      onClick={[Function]}
+    >
+      <div
+        className="toggle-inner"
+      />
+    </div>
+    <img
+      alt="sun"
+      className="darkmode-icon-sun"
+      src="sun.svg"
+    />
+  </div>
+</div>
+`;
