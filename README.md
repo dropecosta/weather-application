@@ -8,8 +8,10 @@ Application to select cities and display temperature data for the current day an
 
 ### Features
 
-- [x] City ​​search with autocomplete
+- [x] City search with autocomplete
 - [x] Display of temperature data for the current day
+- [x] Convert current day temperature from Celsius to Fahrenheit
+- [x] Dark theme switcher
 - [x] Temperature data forecast for the next 7 days
 
 ### Component  Diagram
