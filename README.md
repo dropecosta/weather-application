@@ -3,7 +3,7 @@ Application to select cities and display temperature data for the current day an
 <br /><br /> 
 
 ![application screen](https://raw.githubusercontent.com/dropecosta/weather-application/master/src/assets/screen.png)
-<br />
+<br /><br />
 ![application darkmode screen](https://raw.githubusercontent.com/dropecosta/weather-application/master/src/assets/screen2.png)
 
 ### Features
