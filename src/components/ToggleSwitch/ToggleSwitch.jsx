@@ -1,25 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ToggleSwitch.scss';
 
-const ToggleSwitch = (props) => {
-  const [toggled, setToggled] = useState(true);
+const ToggleSwitch = ({ isOn, handleToggle, onColor }) => {
   return (
-    <label
-      className="toggle"
-      onClick={() => {
-        setToggled((checked) => !checked);
-        props.onClick();
-      }}
-    >
-      {toggled && <span className="on">C</span>}
-      {!toggled && <span className="off">F</span>}
-      <div
-        style={{
-          transform: toggled ? "translateX(28px)" : "translateX(0px)",
-        }}
-      ></div>
-    </label>
+    <>
+      <input
+        checked={isOn}
+        onChange={handleToggle}
+        className="switch-checkbox"
+        id={`switch-new`}
+        type="checkbox"
+      />
+      <label
+        style={{ background: isOn && onColor }}
+        className="switch-label"
+        htmlFor={`switch-new`}
+      >
+        <span className={`switch-button`} />
+      </label>
+    </>
   );
 };
 
-export default ToggleSwitch;
+export default ToggleSwitch
