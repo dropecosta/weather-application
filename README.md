@@ -42,17 +42,17 @@ Current Weather Component:
 
 Forecast component:
 - Receive forecast data of chosen city to next seven days in Celcius and Farenheith from App component;
- -Change values units when click on a ToggleSwitch component;
+- Change values units when click on a ToggleSwitch component;
 
 ToggleSwitch component:
-Switch position with state values;
-Dispatch action to component whei it changes;
-Render switch component;
+- Switch position with state values;
+- Dispatch action to component whei it changes;
+- Render switch component;
 
 Theme component:
-Switch position with state values;
-Change background switching normal/dark theme;
-Render switch component;
+- Switch position with state values;
+- Change background switching normal/dark theme;
+- Render switch component;
 
 ### Available Scripts
 
