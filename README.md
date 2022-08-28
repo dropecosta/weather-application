@@ -18,7 +18,7 @@ Application to select cities and display temperature data for the current day an
 
 ![component diagram](https://raw.githubusercontent.com/dropecosta/weather-application/master/src/assets/diagram.png)
 
-APP comonent:
+APP component:
 - Application entrypoint;
 - Get latitude and longitude from Search component;
 - Get weather information from Openweather API;
@@ -34,7 +34,7 @@ Search component:
 - Create object to return coordinates;
 - Send latitude, longitude and label to App component;
 - Render Search component;
-- Show Autocomplete dropdown list with cities that mach with search term;
+- Show autocomplete dropdown list with cities that mach with search term;
 
 Current Weather Component:
 - Receive weather information of chosen city in Celcius and Farenheith from App component;
