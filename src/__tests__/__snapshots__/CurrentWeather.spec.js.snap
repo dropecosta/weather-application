@@ -7,23 +7,36 @@ exports[`CurrentWeather component tests should match the snapshot 1`] = `
   <div
     className="toggle-container"
   >
+    <span
+      className="on"
+    >
+      °F
+    </span>
+    <input
+      checked={false}
+      className="switch-checkbox"
+      id="switch-new"
+      onChange={[Function]}
+      type="checkbox"
+    />
     <label
-      className="toggle"
-      onClick={[Function]}
+      className="switch-label"
+      htmlFor="switch-new"
+      style={
+        Object {
+          "background": false,
+        }
+      }
     >
       <span
-        className="on"
-      >
-        C
-      </span>
-      <div
-        style={
-          Object {
-            "transform": "translateX(28px)",
-          }
-        }
+        className="switch-button"
       />
     </label>
+    <span
+      className="off"
+    >
+      °C
+    </span>
   </div>
   <div
     className="top"
@@ -54,15 +67,6 @@ exports[`CurrentWeather component tests should match the snapshot 1`] = `
     <div
       className="details"
     >
-      <div
-        className="parameter-row"
-      >
-        <span
-          className="parameter-label"
-        >
-          Details
-        </span>
-      </div>
       <div
         className="parameter-row"
       >

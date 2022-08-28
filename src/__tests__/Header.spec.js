@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import renderer from "react-test-renderer";
-import Header from "./Header";
+import Header from "../components/Header/Header";
 
 describe("Header component tests", () => {
   it("should render APP component with container class", () => {

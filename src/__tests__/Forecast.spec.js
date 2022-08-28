@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import renderer from "react-test-renderer";
-import Forecast from "./Forecast";
+import Forecast from "../components/Forecast/Forecast";
 
 describe("Forecast component tests", () => {
   it("should render APP component with container class", () => {

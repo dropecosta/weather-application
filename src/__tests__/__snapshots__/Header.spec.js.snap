@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component tests should match the snapshot 1`] = `
+<div
+  className="header"
+>
+  <h2>
+    Weather APP
+  </h2>
+  <div
+    className="toggle-container"
+  >
+    <img
+      alt="moon"
+      className="darkmode-icon-moon"
+      src="moon.svg"
+    />
+    <input
+      checked={false}
+      className="switch-checkbox"
+      id="switch-darkmode"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <label
+      className="switch-label"
+      htmlFor="switch-darkmode"
+      style={
+        Object {
+          "background": false,
+        }
+      }
+    >
+      <span
+        className="switch-button"
+      />
+    </label>
+    <img
+      alt="sun"
+      className="darkmode-icon-sun"
+      src="sun.svg"
+    />
+  </div>
+</div>
+`;

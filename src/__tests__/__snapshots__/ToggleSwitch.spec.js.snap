@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToggleSwitch component tests should match the snapshot 1`] = `
+Array [
+  <input
+    className="switch-checkbox"
+    id="switch-new"
+    type="checkbox"
+  />,
+  <label
+    className="switch-label"
+    htmlFor="switch-new"
+    style={
+      Object {
+        "background": undefined,
+      }
+    }
+  >
+    <span
+      className="switch-button"
+    />
+  </label>,
+]
+`;

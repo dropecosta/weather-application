@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import renderer from "react-test-renderer";
-import CurrentWeather from "./CurrentWeather";
+import CurrentWeather from "../components/CurrentWeather/CurrentWeather";
 
 describe("CurrentWeather component tests", () => {
   it("should render APP component with container class", () => {

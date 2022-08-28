@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import renderer from "react-test-renderer";
-import Search from "./Search";
+import Search from "../components/Search/Search";
 
 describe("Search component tests", () => {
   it("should render APP component with container class", () => {
