@@ -12,7 +12,7 @@ Application to select cities and display temperature data for the current day an
 - [x] Display of temperature data for the current day;
 - [x] Switch temperature conversion between Celsius and Fahrenheit for current day and daily forecast;
 - [x] Dark theme switcher;
-- [x] Temperature data forecast for the next 7 days.
+- [x] Temperature data forecast for the next 7 days;
 
 ### Component  Diagram
 
@@ -52,7 +52,7 @@ ToggleSwitch component:
 Theme component:
 - Switch position with state values;
 - Change background switching normal/dark theme;
-- Render switch component.
+- Render switch component;
 
 ### Available Scripts
 
