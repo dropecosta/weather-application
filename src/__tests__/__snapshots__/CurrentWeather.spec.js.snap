@@ -93,7 +93,7 @@ exports[`CurrentWeather component tests should match the snapshot 1`] = `
         <span
           className="parameter-value"
         >
-           m/s
+          NaN m/s
         </span>
       </div>
       <div
