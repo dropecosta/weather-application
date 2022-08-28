@@ -45,14 +45,14 @@ Forecast component:
 - Change values units when click on a ToggleSwitch component;
 
 ToggleSwitch component:
-Switch position with state values;
-Dispatch action to component whei it changes;
-Render switch component;
+- Switch position with state values;
+- Dispatch action to component whei it changes;
+- Render switch component;
 
 Theme component:
-Switch position with state values;
-Change background switching normal/dark theme;
-Render switch component;
+- Switch position with state values;
+- Change background switching normal/dark theme;
+- Render switch component;
 
 ### Available Scripts
 
