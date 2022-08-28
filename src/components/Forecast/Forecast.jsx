@@ -15,12 +15,11 @@ const Forecast = ({ onChange }) => {
   const [resultForecastCelciusWithSplice, setResultForecastCelciusWithSplice] = useState(null);
   const [resultForecastFarenheithWithSplice, setResultForecastFarenheithWithSplice] = useState(null);
   const [finalResult, setFinalResult] = useState(resultForecastCelciusWithSplice);
+  const { forecastCelciusWeather, forecastFarenheithWeather } = useContext(AppContext);
 
   const dayInAWeek = new Date().getDay();
   const forecastDays = WEEK_DAYS.slice(dayInAWeek, WEEK_DAYS.length).concat(WEEK_DAYS.slice(0, dayInAWeek));
   
-  const { forecastCelciusWeather, forecastFarenheithWeather } = useContext(AppContext);
-
   useEffect(() => {
     setResultForecastCelciusWithSplice(forecastCelciusWeather?.list?.splice(0, 7));
     setResultForecastFarenheithWithSplice(forecastFarenheithWeather?.list?.splice(0, 7));

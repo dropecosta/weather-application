@@ -43,7 +43,7 @@ const App = () => {
 
   return (
     <AppContext.Provider value={{ currentCelciusWeather, forecastCelciusWeather, currentFarenheithWeather, forecastFarenheithWeather}}>
-      <div className="app">
+      <div className='app'>
         <div className="container">
           <Header />
           <Search onSearchChange={handleOnSearchChange} />
