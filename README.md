@@ -24,7 +24,7 @@ APP component:
 - Get weather information from Openweather API;
 - Get forecast information from Openweather API;
 - Send data to child components;
-- Show loading animation before information data is requested;
+- Show loading animation before the application is ready;
 
 Header component:
 - Set dark theme active/inactive;
