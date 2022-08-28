@@ -115,7 +115,7 @@ const Forecast = ({ onChange }) => {
                 </div>
                 <div className="daily-details-grid-item">
                   <label>Wind speed:</label>
-                  <label>{item.wind.speed} m/s</label>
+                  <label>{item.wind.speed} mp/h</label>
                 </div>
                 <div className="daily-details-grid-item">
                   <label>Sea level:</label>

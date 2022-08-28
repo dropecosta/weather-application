@@ -6,20 +6,26 @@ import './CurrentWeather.scss';
   const CurrentWeather = ({ onChange }) => {
   const { currentCelciusWeather, currentFarenheithWeather } = useContext(AppContext);
   const [temp, setTemp] = useState(Math.round(currentCelciusWeather?.main.temp));
-  const [feelsLike, setFeelsLike] = useState(Math.round(currentCelciusWeather?.main.feels_like));
-  const [unit, setUnit] = useState("°C");
+  const [feelsLike, setFeelsLike] = useState(Math.round(currentCelciusWeather?.wind.speed));
+  const [wind, setWind] = useState(Math.round(currentCelciusWeather?.main.feels_like));
+  const [windUnit, setWindUnit] = useState('m/s');
+  const [unit, setUnit] = useState('°C');
   const [toggled, setToggled] = useState(false);
 
 
   const convert = () => {
     if (toggled) {
-      setUnit("°C");
+      setUnit('°C');
       setTemp(Math.round(currentCelciusWeather?.main.temp));
       setFeelsLike(Math.round(currentCelciusWeather?.main.feels_like));
+      setWind(Math.round(currentCelciusWeather?.wind.speed));
+      setWindUnit('m/s');
     } else {
-      setUnit("°F");
+      setUnit('°F');
       setTemp(Math.round(currentFarenheithWeather?.main.temp));
       setFeelsLike(Math.round(currentFarenheithWeather?.main.feels_like));
+      setWind(Math.round(currentFarenheithWeather?.wind.speed));
+      setWindUnit('mp/h');
     }
   };
 
@@ -68,7 +74,10 @@ import './CurrentWeather.scss';
           </div>
           <div className="parameter-row">
             <span className="parameter-label">Wind</span>
-            <span className="parameter-value">{currentCelciusWeather?.wind.speed} m/s</span>
+            <span className="parameter-value">
+              
+              {`${wind} ${windUnit}`}
+            </span>
           </div>
           <div className="parameter-row">
             <span className="parameter-label">Humidity</span>

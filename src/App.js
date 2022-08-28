@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { WEATHER_API_URL, WEATHER_API_KEY } from "./api/api";
 import { AppContext } from "./context/context";
 import Header from "./components/Header/Header";
@@ -13,8 +13,17 @@ const App = () => {
   const [currentFarenheithWeather, setCurrentFarenheithWeather] = useState(null);
   const [forecastFarenheithWeather, setForecastFarenheithWeather] = useState(null);
   const [toggled, setToggled] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, []);
 
   const handleOnSearchChange = (searchData) => {
+    setLoading(true);
     const [lat, lon] = searchData.value.split(" ");
 
     const currentWeatherCelsiusFetch = fetch(`${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`);
@@ -24,6 +33,7 @@ const App = () => {
 
     Promise.all([currentWeatherCelsiusFetch, forecastCelciusFetch, currentWeatherFarenheithFetch, forecastFarenheithFetch])
       .then(async (response) => {
+        setLoading(false);
         const weatherCelciusResponse = await response[0].json();
         const forcastCelciusResponse = await response[1].json();
         const weatherFarenheithResponse = await response[2].json();
@@ -45,10 +55,16 @@ const App = () => {
     <AppContext.Provider value={{ currentCelciusWeather, forecastCelciusWeather, currentFarenheithWeather, forecastFarenheithWeather}}>
       <div className='app'>
         <div className="container">
+        {loading ? (
+        <div className="loader-container">
+          <div className="spinner"></div>
+        </div>
+        ) : (<>
           <Header />
           <Search onSearchChange={handleOnSearchChange} />
           {currentCelciusWeather && ( <CurrentWeather onChange={handleChange} />)}
           {forecastCelciusWeather && <Forecast onChange={toggled} />}
+        </>)}
         </div>
       </div>
     </AppContext.Provider>
