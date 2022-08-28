@@ -1,34 +1,77 @@
-import React from 'react';
+import React, { useState, useEffect, useContext } from "react";
 import {
   Accordion,
   AccordionItem,
   AccordionItemHeading,
   AccordionItemButton,
   AccordionItemPanel,
-} from 'react-accessible-accordion';
-import './Forecast.scss';
+} from "react-accessible-accordion";
+import { AppContext } from "../../context/context";
+import "./Forecast.scss";
 
-const WEEK_DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+const WEEK_DAYS = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+];
 
-const Forecast = ({ data }) => {
+const Forecast = ({ data, onChange }) => {
+  const [resultDataWithSplice, setResultDataWithSplice] = useState(null);
+  const [resultForecastWithSplice, setResultForecastWithSplice] =
+    useState(null);
+  const [finalResult, setFinalResult] = useState(resultDataWithSplice);
+
   const dayInAWeek = new Date().getDay();
-  const forecastDays = WEEK_DAYS.slice(dayInAWeek, WEEK_DAYS.length).concat(WEEK_DAYS.slice(0, dayInAWeek));
-  
-  return (
+  const forecastDays = WEEK_DAYS.slice(dayInAWeek, WEEK_DAYS.length).concat(
+    WEEK_DAYS.slice(0, dayInAWeek)
+  );
+
+  const { forecast, farenheithForecast } = useContext(AppContext);
+/* 
+  console.log("resultDataWithSplice", resultDataWithSplice);
+  console.log("resultForecastWithSplice", resultForecastWithSplice);
+  console.log("finalResult", finalResult);
+  console.log("onChange", onChange); */
+
+  useEffect(() => {
+    setResultDataWithSplice(data?.list?.splice(0, 7));
+    setResultForecastWithSplice(farenheithForecast?.list?.splice(0, 7));
+  }, [data, farenheithForecast]);
+
+  useEffect(() => {
+    const result =
+      onChange === true ? resultDataWithSplice : resultForecastWithSplice;
+    setFinalResult(result);
+  }, [onChange]);
+
+  return !onChange ? (
     <>
-    <div className="title-container">
-      <label className="title">Daily forecast</label>
-    </div>
+      <div className="title-container">
+        <label className="title">Daily forecast</label>
+      </div>
       <Accordion allowZeroExpanded>
-        {data?.list.splice(0, 7).map((item, idx) => (
+        {resultDataWithSplice?.map((item, idx) => (
           <AccordionItem key={idx}>
             <AccordionItemHeading>
               <AccordionItemButton>
                 <div className="daily-item">
-                  <img src={`icons/${item.weather[0].icon}.png`} className="icon-small" alt="weather" />
+                  <img
+                    src={`icons/${item.weather[0].icon}.png`}
+                    className="icon-small"
+                    alt="weather"
+                  />
                   <label className="day">{forecastDays[idx]}</label>
-                  <label className="description">{item.weather[0].description}</label>
-                  <label className="min-max">{Math.round(item.main.temp_max)}°C /{Math.round(item.main.temp_min)}°C</label>
+                  <label className="description">
+                    {item.weather[0].description}
+                  </label>
+                  <label className="min-max">
+                    {Math.round(item.main.temp_max)}°C /
+                    {Math.round(item.main.temp_min)}°C
+                  </label>
                 </div>
               </AccordionItemButton>
             </AccordionItemHeading>
@@ -64,7 +107,66 @@ const Forecast = ({ data }) => {
         ))}
       </Accordion>
     </>
+  ) : (
+    <>
+      <div className="title-container">
+        <label className="title">Daily forecast</label>
+      </div>
+      <Accordion allowZeroExpanded>
+        {resultForecastWithSplice?.map((item, idx) => (
+          <AccordionItem key={idx}>
+            <AccordionItemHeading>
+              <AccordionItemButton>
+                <div className="daily-item">
+                  <img
+                    src={`icons/${item.weather[0].icon}.png`}
+                    className="icon-small"
+                    alt="weather"
+                  />
+                  <label className="day">{forecastDays[idx]}</label>
+                  <label className="description">
+                    {item.weather[0].description}
+                  </label>
+                  <label className="min-max">
+                    {Math.round(item.main.temp_max)}°F /
+                    {Math.round(item.main.temp_min)}°F
+                  </label>
+                </div>
+              </AccordionItemButton>
+            </AccordionItemHeading>
+            <AccordionItemPanel>
+              <div className="daily-details-grid">
+                <div className="daily-details-grid-item">
+                  <label>Pressure:</label>
+                  <label>{item.main.pressure}</label>
+                </div>
+                <div className="daily-details-grid-item">
+                  <label>Humidity:</label>
+                  <label>{item.main.humidity}</label>
+                </div>
+                <div className="daily-details-grid-item">
+                  <label>Clouds:</label>
+                  <label>{item.clouds.all}%</label>
+                </div>
+                <div className="daily-details-grid-item">
+                  <label>Wind speed:</label>
+                  <label>{item.wind.speed} m/s</label>
+                </div>
+                <div className="daily-details-grid-item">
+                  <label>Sea level:</label>
+                  <label>{item.main.sea_level}m</label>
+                </div>
+                <div className="daily-details-grid-item">
+                  <label>Feels like:</label>
+                  <label>{item.main.feels_like}°F</label>
+                </div>
+              </div>
+            </AccordionItemPanel>
+          </AccordionItem>
+        ))}
+      </Accordion>
+    </>
   );
 };
 
-export default Forecast
+export default Forecast;

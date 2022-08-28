@@ -1,30 +1,31 @@
-import React, { useState } from "react";
-import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
-import "./CurrentWeather.scss";
+import React, { useState, useContext } from 'react';
+import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
+import { AppContext } from '../../context/context';
+import './CurrentWeather.scss';
 
-const CurrentWeather = ({ data }) => {
+  const CurrentWeather = ({ data, onChange }) => {
   const [temp, setTemp] = useState(Math.round(data?.main.temp));
   const [feelsLike, setFeelsLike] = useState(Math.round(data?.main.feels_like));
   const [unit, setUnit] = useState("°C");
   const [toggled, setToggled] = useState(false);
 
-  const oppositeUnit = unit === "°C" ? "°F" : "°C";
+  const { currentWeather, farenheithWeather } = useContext(AppContext);
 
   const convert = () => {
-    if (unit === "°C") {
-      const newT = temp * 1.8 + 32;
-      setTemp(Math.round(newT));
-      setFeelsLike(Math.round(newT));
-      setUnit(oppositeUnit);
-    }
-
-    if (unit === "°F") {
-      const newT = ((temp - 32) * 5) / 9;
-      setTemp(Math.round(newT));
-      setFeelsLike(Math.round(newT));
-      setUnit(oppositeUnit);
+    if (toggled) {
+      setUnit("°C");
+      setTemp(Math.round(currentWeather?.main.temp));
+      setFeelsLike(Math.round(currentWeather?.main.feels_like));
+    } else {
+      setUnit("°F");
+      setTemp(Math.round(farenheithWeather?.main.temp));
+      setFeelsLike(Math.round(farenheithWeather?.main.feels_like));
     }
   };
+
+  const handleChange = (toggled) => {
+    onChange(toggled);
+}
 
   return (
     <div className="weather">
@@ -36,6 +37,7 @@ const CurrentWeather = ({ data }) => {
           handleToggle={() => {
             setToggled(!toggled);
             convert();
+            handleChange(!toggled)
           }}
         />
         <span className="off">°C</span>
@@ -82,4 +84,4 @@ const CurrentWeather = ({ data }) => {
   );
 };
 
-export default CurrentWeather;
+export default CurrentWeather
