@@ -28,7 +28,7 @@ const Forecast = ({ onChange }) => {
   useEffect(() => {
     const result = (onChange === true) ? resultForecastCelciusWithSplice : resultForecastFarenheithWithSplice;
     setFinalResult(result);
-  }, [onChange])
+  }, [onChange, resultForecastCelciusWithSplice, resultForecastFarenheithWithSplice])
 
   return !onChange ? (
     <>
