@@ -59,12 +59,17 @@ const App = () => {
         <div className="loader-container">
           <div className="spinner"></div>
         </div>
-        ) : (<>
+        ) :
+        (
+          <>
           <Header />
           <Search onSearchChange={handleOnSearchChange} />
+
+
           {currentCelciusWeather && ( <CurrentWeather onChange={handleChange} />)}
           {forecastCelciusWeather && <Forecast onChange={toggled} />}
-        </>)}
+        </>
+        )} 
         </div>
       </div>
     </AppContext.Provider>

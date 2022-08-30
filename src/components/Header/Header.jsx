@@ -1,25 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ThemeSwitch from '../ThemeSwitch/ThemeSwitch';
 import sun from '../../assets/icons/sun.svg';
 import moon from '../../assets/icons/moon.svg';
+import { ThemeContext, themes } from '../../context/ThemeContext';
 import './Header.scss';
 
 const Header = () => {
-  const [darkMode, setDarkMode] = React.useState(false);
-  const [checked, setChecked] = useState(false);
+  const [darkMode, setDarkMode] = useState(JSON.parse(localStorage.getItem('darkmode')));
+  const [checked, setChecked] = useState(JSON.parse(localStorage.getItem('isChecked')));
 
-  React.useEffect(() => {
+  useEffect(() => {
     const body = document.body;
-    const toggle = document.querySelector('.toggle-inner');
-
-    if (darkMode === true) {
-      body.classList.add('dark-mode');
-    toggle?.classList.add('toggle-active');
+    if (darkMode) {
+      body.classList.add('dark-content');
     } else {
-      body.classList.remove('dark-mode');
-      toggle?.classList.remove('toggle-active');
+      body.classList.remove('dark-content');
     }
-  }, [darkMode]);
+    localStorage.setItem('darkmode', JSON.stringify(darkMode));
+    localStorage.setItem('isChecked', JSON.stringify(checked));
+  }, [darkMode, checked]);
 
   return (
     <div className="header">
@@ -27,15 +26,19 @@ const Header = () => {
 
       <div className="toggle-container">
       <img src={moon} className='darkmode-icon-moon' alt="moon"/>
-        
+      <ThemeContext.Consumer>
+      {({ changeTheme }) => ( 
         <ThemeSwitch
           isCheck={checked}
           onColor="#666"
           handleDarkMode={() => {
             setChecked(!checked);
-            darkMode === false ? setDarkMode(true) : setDarkMode(false)
+            setDarkMode(!darkMode);
+            changeTheme(darkMode ? themes.dark : themes.light); 
           }}
         />
+      )}
+      </ThemeContext.Consumer>
         <img src={sun} className='darkmode-icon-sun' alt="sun"/>
       </div>
     </div>
