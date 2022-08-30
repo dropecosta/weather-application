@@ -8,11 +8,11 @@ Application to select cities and display temperature data for the current day an
 
 ### Features
 
-- [x] City search with autocomplete
-- [x] Display of temperature data for the current day
-- [x] Switch temperature conversion between Celsius and Fahrenheit for current day and forecast
-- [x] Dark theme switcher
-- [x] Temperature data forecast for the next 7 days
+- [x] City search with autocomplete;
+- [x] Display of temperature data for the current day;
+- [x] Switch temperature conversion between Celsius and Fahrenheit for current day and daily forecast;
+- [x] Dark theme switcher;
+- [x] Temperature data forecast for the next 7 days;
 
 ### Component  Diagram
 
@@ -24,7 +24,7 @@ APP component:
 - Get weather information from Openweather API;
 - Get forecast information from Openweather API;
 - Send data to child components;
-- Show loading animation before information data is requested;
+- Show loading animation before the application is ready;
 
 Header component:
 - Set dark theme active/inactive;
